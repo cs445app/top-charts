@@ -1,0 +1,75 @@
+.appLogo {
+    width: 100%;
+    height: 40%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    margin-bottom: -200px; /* Initial position */
+    position: relative;
+    animation: pulse 2s infinite alternate; /* Animation */
+    
+}
+
+
+.circle1 {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: 20%;
+    width: 50%;
+    border-bottom-left-radius: 100%;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    animation: pulse 1.5s infinite alternate; /* Animation */
+}
+
+.circle2 {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 20%;
+    width: 50%;
+    border-top-right-radius: 100%;
+    background-color: #FFCC70;
+    background-image: linear-gradient(225deg, #FFCC70 0%, #C850C0 46%, #4158D0 100%);
+    animation: pulse 1.8s infinite alternate; /* Animation */
+}
+
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 3;
+    }
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.formContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputFields {
+    height: 70px;
+}
+
+.icons {
+    font-size: 24px;
+}
+
+.button {
+    height: 50px;
+    margin-top: 10px;
+}
+
+ion-button {
+    --background: #C850C0
+}
