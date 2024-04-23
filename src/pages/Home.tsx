@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent scrollY={false} color={'dark'} className="ion-padding">
+      <IonContent scrollY={false} color={'light'} className="ion-padding">
         <div className='header'>
           <h1>Top Charts</h1>
         </div>

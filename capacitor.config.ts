@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'org.TopChartsApp.TestApp',
-  appName: 'TestApp',
+  appName: 'Top Charts',
   webDir: 'dist',
   server: {
     androidScheme: 'https'
