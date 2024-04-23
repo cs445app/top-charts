@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { IonImg, IonButton, IonCol, IonContent, IonGrid, IonIcon, IonInput, IonPage, IonRow, IonToast } from '@ionic/react';
 import { personOutline, lockClosedOutline } from 'ionicons/icons';
@@ -46,59 +47,70 @@ const Login: React.FC = () => {
     setIsOpen(true);
   }
 
-  return (
-    <IonPage>
-      <IonContent scrollY={false} color={'dark'} className="ion-padding">
-        {logoVisible && <IonImg className='appLogo' src={appLogo} alt="Logo"></IonImg>}
-        <IonGrid className='formContainer'>
-          <IonRow>
-            <IonCol size='12' size-md='12'>
-              <form className='loginForm'>
-                <IonInput
-                  name='userName'
-                  className='inputFields'
-                  value={loginData.userName}
-                  onInput={(e) => handleInputChange(e)}
-                  placeholder="Username"
-                  onFocus={handleInputFocus} // Handle focus event
-                >
-                  <div slot='label'>
-                    <IonIcon icon={personOutline} className='icons'></IonIcon>
-                  </div>
-                </IonInput>
-                <IonInput
-                  name='password'
-                  type='password'
-                  className='inputFields'
-                  value={loginData.password}
-                  onInput={(e) => handleInputChange(e)}
-                  placeholder="Password"
-                  onFocus={handleInputFocus} // Handle focus event
-                >
-                  <div slot='label'>
-                    <IonIcon icon={lockClosedOutline} className='icons'></IonIcon>
-                  </div>
-                </IonInput>
-                <IonButton shape='round' className='button' expand='full' onClick={login}>Login</IonButton>
-              </form>
-            </IonCol>
-          </IonRow>
-        </IonGrid>
-        <div className='circle1'></div>
-        <div className='circle2'></div>
-        <span className='dot'></span>
-        <IonToast
-          color={'tertiary'}
-          isOpen={isOpen}
-          onDidDismiss={() => setIsOpen(false)}
-          message={message}
-          duration={duration}
-          position={position}
-        />
-      </IonContent>
-    </IonPage>
-  );
+  // Inside your Login component
+
+const loginAsGuest = () => {
+  // Perform actions to log in the user as a guest
+  // For example, you can set up a temporary session or navigate to a guest page
+  history.push('/Home'); // Example: navigating to a guest page
+}
+
+return (
+  <IonPage>
+    <IonContent scrollY={false} color={'light'} className="ion-padding">
+      {logoVisible && <IonImg className='appLogo' src={appLogo} alt="Logo"></IonImg>}
+      <IonGrid className='formContainer'>
+        <IonRow>
+          <IonCol size='12' size-md='12'>
+            <form className='loginForm'>
+              <IonInput
+                name='userName'
+                className='inputFields'
+                value={loginData.userName}
+                onInput={(e) => handleInputChange(e)}
+                placeholder="Username"
+                onFocus={handleInputFocus} // Handle focus event
+              >
+                <div slot='label'>
+                  <IonIcon icon={personOutline} className='icons'></IonIcon>
+                </div>
+              </IonInput>
+              <IonInput
+                name='password'
+                type='password'
+                className='inputFields'
+                value={loginData.password}
+                onInput={(e) => handleInputChange(e)}
+                placeholder="Password"
+                onFocus={handleInputFocus} // Handle focus event
+              >
+                <div slot='label'>
+                  <IonIcon icon={lockClosedOutline} className='icons'></IonIcon>
+                </div>
+              </IonInput>
+              <IonButton shape='round' className='button' expand='full' onClick={login}>Login</IonButton>
+              <IonButton shape='round' className='button' expand='full' onClick={loginAsGuest}>Guest</IonButton>
+            </form>
+          </IonCol>
+        </IonRow>
+      </IonGrid>
+      <div className='circle1'></div>
+      <div className='circle2'></div>
+      <span className='dot'></span>
+      <IonToast
+        color={'tertiary'}
+        isOpen={isOpen}
+        onDidDismiss={() => setIsOpen(false)}
+        message={message}
+        duration={duration}
+        position={position}
+      />
+    </IonContent>
+  </IonPage>
+);
+
 };
 
 export default Login;
+
 

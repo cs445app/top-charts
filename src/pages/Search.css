@@ -1,3 +1,4 @@
+
 .search-container {
     position: relative;
     top: 15px; /* Adjust this value as needed */
@@ -167,8 +168,9 @@
 
  /* chart style start */
  .chart-title {
-  margin-bottom: 20px;
-  font-size: 1.8em;
+  margin-top: -10px;
+  margin-bottom: 40px;
+  font-size: 2.3em;
   font-weight: bold;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background-image: linear-gradient(225deg, #C850C0 46%, #4158D0 100%);
@@ -184,16 +186,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height : 100vh;
   padding: 20px;
-  margin-top: 150px;
+  margin-top: 0px;
   background-color: white;
 }
 
 canvas#pieChart {
-  max-width: 100%;
+  max-width: 250px; /* Set the maximum width */
+  max-height: 250px; /* Set the maximum height */
+  width: 100%; /* Ensure it takes up the available width */
+  height: auto; /* Allow the height to adjust proportionally */
+  margin-bottom: 50px; 
+}
+
+canvas#barChart {
+  max-width: 90%;
+  max-height: 100%;
+  width : 100%;
   height: auto;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   color: white;
+  
 }
 /* chart style End */
 
@@ -204,5 +218,6 @@ canvas#pieChart {
 }
 .gragh-button {
   color: white;
+  margin-top: 40px;
 }
 /* Style for the close button */
